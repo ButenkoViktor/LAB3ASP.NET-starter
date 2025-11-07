@@ -1,0 +1,13 @@
+@model lab3.Models.BlogArticleViewModel
+
+<div class="mb-3">
+    <a asp-controller="Blog" asp-action="Index">&larr; Back to list</a>
+</div>
+
+<article>
+    <h1>@Model.Title</h1>
+    <p class="text-muted">@Model.Description</p>
+    <div class="mt-4">
+        @Html.Raw(Model.Content)
+    </div>
+</article>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<lab3.Models.BlogArticleViewModel>
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1 class="display-4">Blog Posts</h1>
+    <a class="btn btn-sm btn-primary" asp-controller="Blog" asp-action="Create">New Article</a>
+</div>
+
+<ul class="list-group mt-4">
+@foreach (var article in Model)
+{
+    <li class="list-group-item">
+        <h5><a asp-controller="Blog" asp-action="Article" asp-route-id="@article.Id">@article.Title</a></h5>
+        <p class="mb-1 text-muted">@article.Description</p>
+    </li>
+}
+</ul>
