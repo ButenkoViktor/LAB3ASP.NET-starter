@@ -1,4 +1,8 @@
+using lab3;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<BlogContext>();
 
 builder.Services.AddControllersWithViews();
 

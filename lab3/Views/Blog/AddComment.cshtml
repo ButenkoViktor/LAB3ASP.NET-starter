@@ -1,0 +1,17 @@
+﻿@model lab3.Models.CreateBlogCommentModel
+
+<form asp-controller="Blog" asp-action="AddComment" method="post">
+    <input type="hidden" asp-for="ArticleId" />
+
+    <div class="mb-3">
+        <label asp-for="Author" class="form-label"></label>
+        <input asp-for="Author" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label"></label>
+        <textarea asp-for="Content" class="form-control" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
