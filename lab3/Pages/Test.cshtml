@@ -1,0 +1,21 @@
+﻿@page
+@model lab3.Pages.Blog.TestModel
+@{
+    Layout = null;
+}
+<h1>@Model.Article?.Title</h1>
+<p>@Model.Article?.Description</p>
+<article>@Model.Article?.Content</article>
+
+<section>
+    <h2>Komentarze (@Model.Article?.Comments?.Count ?? 0)</h2>
+    <ul>
+        @foreach (var c in Model.Article?.Comments ?? Enumerable.Empty<lab3.Models.Entities.BlogComment>())
+        {
+            <li>
+                <strong>@c.Author</strong> (@c.CreatedAt.ToLocalTime()):
+                @c.Content
+            </li>
+        }
+    </ul>
+</section>
